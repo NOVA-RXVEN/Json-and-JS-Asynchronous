@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>JS Promise</h2>
+    <p id="demo"></p>
+
+    <script>
+      function myDisplay(some) {
+        document.getElementById("demo").innerHTML = some;
+      }
+      function sum(a, b) {
+        var sum = a + b;
+        myDisplay(sum);
+      }
+
+      let myPromise = new Promise(function (myResolve, myReject) {
+        let x = true;
+
+        if (x == true) {
+          myResolve("OK");
+        } else {
+          myReject("Error");
+        }
+      });
+
+      //consuming code - must wait for fullfilled promise
+      myPromise.then(
+        function (value) {
+          sum(5, 5);
+        }, //code is succesfull
+        function (error) {
+          sum(error);
+        } // code is error
+      );
+    </script>
+  </body>
+</html>
