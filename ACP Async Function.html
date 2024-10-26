@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: rgb(176, 216, 157);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JS Async/Await</h1>
+    <h2 id="result"></h2>
+    <script>
+      async function product(a, b) {
+        let responce = (await a) / b;
+        display(responce);
+      }
+
+      function display(some) {
+        document.getElementById("result").innerHTML = some;
+      }
+      product(108205551580512, 25);
+    </script>
+  </body>
+</html>
